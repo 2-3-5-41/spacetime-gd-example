@@ -7,8 +7,6 @@ edition = "2024"
 crate-type = ["cdylib", "lib"]
 
 [dependencies]
-godot = { git = "https://github.com/godot-rust/gdext", branch = "master", features = [
-    "experimental-threads",
-] }
+godot = { git = "https://github.com/godot-rust/gdext", branch = "master" }
 spacetimedb-sdk = "1.0"
 hex = "0.4"
