@@ -39,7 +39,8 @@ impl INode for SpacetimeDbClient {
     fn physics_process(&mut self, _delta: f32) {
         let ctx = self.db.as_ref().expect("Database context...");
         if let Err(err) = ctx.frame_tick() {
-            // Using `DbConnection::frame_tick()` to perform spacetime processing on main thread.
+            // Using `DbConnection::frame_tick()` to perform spacetime processing on main thread,
+            // instead of using `DbConnection::run_threaded()` as demonstrated in the SpacetimeDB docs.
             godot_error!("{:?}", err);
         }
     }
